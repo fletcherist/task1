@@ -1,10 +1,10 @@
 import React from 'react';
-import s from 'SearchBox.scss';
+import s from './SearchBox.scss';
 
 class SearchBox extends React.Component {
   render () {
     return (
-      <div>
+      <div className={s.container}>
         <input className={s.input}/>
       </div>
     )

@@ -1,5 +1,16 @@
+.container {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+}
 .input {
+  border: 1px soid #D8D8D8;
   border-radius: 8px;
-  width: 60%;
-  margin: 0px auto;
+  width: 300px;
+  height: 45px;
+  padding: 0px 10px 0px 10px;
+
+  &:focus {
+    outline: none;
+  }
 }
