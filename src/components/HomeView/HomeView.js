@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { increment, doubleAsync } from '../../redux/modules/counter'
-import layout from './layout.jpg';
 import logotype from './logotype.svg';
-import classes from './HomeView.scss';
-import SearchBox from 'components/SearchBox';
+import s from './HomeView.scss';
+// import SearchBox from 'components/SearchBox';
+import Navbar from '../Navbar';
 
 type Props = {
   counter: number,
@@ -22,13 +22,8 @@ export class HomeView extends React.Component<void, Props, void> {
   render () {
     return (
       <div>
-        <div className={classes.layout} style={{background: `url(${layout})`}}></div>
-        <div className={classes.logotype}><img src={logotype}/></div>
-        {'//'}
-        <div className={classes.container}>
-          <h1 className={classes.title}>Реактивная телепрограмма</h1>
-        </div>
-        <SearchBox/>
+        <div className={s.logotype}><img src={logotype}/></div>
+        <Navbar />
       </div>
     )
   }

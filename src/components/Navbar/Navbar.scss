@@ -1,0 +1,47 @@
+.navBar {
+  background-color: #2A2F3A;
+  height: 100%;
+  width: 400px;
+  float: right;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.time {
+  color: white;
+  text-align: right;
+  font-size: 34px;
+  padding: 10px 30px 20px 10px;
+  letter-spacing: 5px;
+}
+
+.program {
+  height: 80px;
+  &_selected {
+    background-color: #4F5A65;
+  }
+}
+.picture {
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+}
+
+.info {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+  position: absolute;
+}
+
+.title {
+    text-align: left;
+    color: #6FB3D2;
+    z-index: 9999;
+    font-size: 25px;
+}
+
+.description {
+  color: white;
+}

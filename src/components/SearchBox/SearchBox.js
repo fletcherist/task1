@@ -5,7 +5,8 @@ class SearchBox extends React.Component {
   render () {
     return (
       <div className={s.container}>
-        <input className={s.input}/>
+        <div></div>
+        <div></div>
       </div>
     )
   }
