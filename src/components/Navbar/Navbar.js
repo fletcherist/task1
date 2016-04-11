@@ -25,7 +25,6 @@ const channels = [
     description: 'Блаблабл'
   }
 ];
-
 class Navbar extends React.Component {
   render () {
     return (
