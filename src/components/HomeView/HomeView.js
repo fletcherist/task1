@@ -1,28 +1,26 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { increment, doubleAsync } from '../../redux/modules/counter'
+import { fetchData } from '../../redux/modules/parser';
 import logotype from './logotype.svg';
 import s from './HomeView.scss';
-// import SearchBox from 'components/SearchBox';
 import Navbar from '../Navbar';
+import Items from '../Items';
 
-type Props = {
-  counter: number,
-  doubleAsync: Function,
-  increment: Function
-};
-
-export class HomeView extends React.Component<void, Props, void> {
+export class HomeView extends React.Component {
   static propTypes = {
-    counter: PropTypes.number.isRequired,
-    doubleAsync: PropTypes.func.isRequired,
-    increment: PropTypes.func.isRequired
-  };
-
+    fetchData: React.PropTypes.func.isRequired
+  }
+  componentWillMount () {
+    // this.props.fetchData();
+  }
   render () {
     return (
       <div>
-        <div className={s.logotype}><img src={logotype}/></div>
+        <div className={s.layout}>
+          <div className={s.logotype}><img src={logotype}/></div>
+          <div className={s.title}>Реактивная программа на сегодня, завтра, и вчера.</div>
+          <Items />
+        </div>
         <Navbar />
       </div>
     )
@@ -33,6 +31,5 @@ const mapStateToProps = (state) => ({
   counter: state.counter
 })
 export default connect((mapStateToProps), {
-  increment: () => increment(1),
-  doubleAsync
+  fetchData
 })(HomeView)

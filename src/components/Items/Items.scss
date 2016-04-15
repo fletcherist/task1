@@ -1,0 +1,19 @@
+.container {
+  background-color: #fff;
+  max-width: 860px;
+  margin: 20px auto;
+  min-height: 750px;
+  padding: 20px;
+}
+
+.startScreen {
+  text-align: center;
+  color: #CACACA;
+  font-size: 22px;
+  font-weight: 300;
+  padding: 200px 30px 30px 30px;
+
+  .startScreenTitle {
+    padding-bottom: 40px;
+  }
+}
