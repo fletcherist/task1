@@ -92,7 +92,9 @@ class Navbar extends React.Component {
         <TimeBlock />
         {channels.map((channel) => {
           return (
-            <div className={cx(s.program)}
+            <div className={cx({
+              program: true
+            })}
               key={channel.key} onClick={function () { self.props.fetchData(channel.key) }}>
               <div className={s.picture}>
                 <img src={channel.picture} className={s.picture} />

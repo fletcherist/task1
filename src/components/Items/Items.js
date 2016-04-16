@@ -11,18 +11,21 @@ class Items extends React.Component {
     isFetching: React.PropTypes.bool
   }
   render () {
-    console.log(this.props.program);
-
     var programmList;
+    var errorFlag = false;
     if (this.props.program &&
         this.props.program['p:program'] &&
         this.props.program['p:program']['p:day']
     ) {
-      programmList = this.props.program['p:program']['p:day']['p:item'] || undefined;
+      if (this.props.program['p:program']['p:day']['p:item']) {
+        programmList = this.props.program['p:program']['p:day']['p:item'] || undefined;
+      } else {
+        errorFlag = true;
+      }
     }
     return (
       <div className={s.container}>
-        {programmList && (
+        {programmList && !errorFlag && (
           <div className>
             {programmList.map((program) => {
               return (
@@ -32,7 +35,10 @@ class Items extends React.Component {
           </div>
         )}
         {!programmList && (
-          <StartScreen />
+          <div>
+            {errorFlag && (<ErrorHandlingData/>)}
+            {!errorFlag && (<StartScreen />)}
+          </div>
         )}
         {this.props.isFetching && (
           <Loader/>
@@ -51,6 +57,17 @@ class StartScreen extends React.Component {
       </div>
     )
   }
+}
+
+const ErrorHandlingData = ({channel}) => {
+  return (
+    <div>
+      Программа передач на сегодня отсутствует
+    </div>
+  )
+}
+ErrorHandlingData.propTypes = {
+  channel: React.PropTypes.string.isRequired
 }
 
 const mapStateToProps = (state) => {

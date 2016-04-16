@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchData } from '../../redux/modules/parser';
-import logotype from './logotype.svg';
 import s from './HomeView.scss';
 import Navbar from '../Navbar';
 import Items from '../Items';
@@ -17,8 +16,7 @@ export class HomeView extends React.Component {
     return (
       <div>
         <div className={s.layout}>
-          <div className={s.logotype}><img src={logotype}/></div>
-          <div className={s.title}>Реактивная программа на сегодня, завтра, и вчера.</div>
+          <div className={s.title}>Реактивная телепрограмма на <br/>сегодня, завтра, и вчера.</div>
           <Items />
         </div>
         <Navbar />
