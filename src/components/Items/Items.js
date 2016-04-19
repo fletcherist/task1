@@ -23,26 +23,23 @@ class Items extends React.Component {
         errorFlag = true;
       }
     }
+    console.log(this.props.program);
     return (
       <div className={s.container}>
         {programmList && !errorFlag && (
           <div className>
             {programmList.map((program) => {
-              return (
-                <Item info={program}/>
-              )
+              return (<Item info={program}/>)
             })}
           </div>
         )}
         {!programmList && (
           <div>
-            {errorFlag && (<ErrorHandlingData/>)}
-            {!errorFlag && (<StartScreen />)}
+            {errorFlag && !this.props.isFetching && (<ErrorHandlingData/>)}
+            {!errorFlag && !this.props.isFetching && (<StartScreen />)}
           </div>
         )}
-        {this.props.isFetching && (
-          <Loader/>
-        )}
+        {this.props.isFetching && (<Loader/>)}
       </div>
     )
   }

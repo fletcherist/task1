@@ -12,14 +12,15 @@
 
 .program {
   cursor: pointer;
-  &_selected {
-    background-color: #4F5A65;
-  }
-
   &:hover .info {
     opacity: 1;
   }
 }
+
+.selected {
+  background-color: #4F5A65;
+}
+
 .picture {
   height: 80px;
   width: 80px;

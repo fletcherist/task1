@@ -82,9 +82,20 @@ const channels = [
   }
 ];
 class Navbar extends React.Component {
+  constructor () {
+    super();
+    this.state = {
+      selected: false
+    }
+  }
   static propTypes = {
     fetchData: React.PropTypes.func.isRequired
   };
+
+  loadChannel (channel) {
+    this.props.fetchData(channel);
+    this.setState({selected: channel});
+  }
   render () {
     var self = this;
     return (
@@ -93,9 +104,10 @@ class Navbar extends React.Component {
         {channels.map((channel) => {
           return (
             <div className={cx({
-              program: true
+              program: true,
+              selected: self.state.selected === channel.key
             })}
-              key={channel.key} onClick={function () { self.props.fetchData(channel.key) }}>
+              key={channel.key} onClick={self.loadChannel.bind(this, channel.key)}>
               <div className={s.picture}>
                 <img src={channel.picture} className={s.picture} />
               </div>

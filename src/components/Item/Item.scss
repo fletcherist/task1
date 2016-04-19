@@ -13,7 +13,24 @@
 
 .title {
   display: inline-block;
-  font-size: 20px;
+  font-size: 18px;
   color: #404040;
   max-width: 700px;
+}
+
+.alreadyOver {
+  opacity: .6;
+}
+
+.hot {
+  background-color: #FFF9C4;
+  font-weight: bold;
+}
+
+.hotMessage {
+  float: right;
+  font-weight: 300;
+  margin-top: 6px;
+  color: #F9A825;
+  cursor: pointer;
 }

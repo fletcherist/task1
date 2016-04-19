@@ -10,6 +10,7 @@ const getTime = () => {
   if (day < 10) day = '0' + day;
 
   var dateString = year + month + day;
+  console.log(dateString);
   return dateString;
 }
 
