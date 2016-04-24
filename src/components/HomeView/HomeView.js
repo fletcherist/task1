@@ -16,7 +16,7 @@ export class HomeView extends React.Component {
     return (
       <div>
         <div className={s.layout}>
-          <div className={s.title}>Реактивная телепрограмма на <br/>сегодня, завтра, и вчера.</div>
+          <div className={s.title}>Реактивная телепрограмма на <br/>сегодня.</div>
           <Items />
         </div>
         <Navbar />

@@ -1,9 +1,12 @@
 .container {
   background-color: #fff;
-  max-width: 860px;
+  width: 100%;
   margin: 20px auto;
   min-height: 750px;
   padding: 20px;
+  border-radius: 4px;
+  max-width: 800px;
+  margin: 0px auto;
 }
 
 .startScreen {
@@ -15,5 +18,22 @@
 
   .startScreenTitle {
     padding-bottom: 40px;
+  }
+}
+
+.noTV {
+  color: #ABABAB;
+  text-align: center;
+  padding-top: 300px;
+}
+
+.sad {
+  padding: 25px;
+  opacity: .8;
+  img {
+    background-position: center;
+    background-size: 100px;
+    width: 100px;
+    height: 100px;
   }
 }

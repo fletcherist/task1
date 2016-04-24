@@ -3,6 +3,7 @@ import s from './Item.scss';
 import classNames from 'classnames/bind';
 let cx = classNames.bind(s);
 
+var isNow = false;
 function makeTime (time) {
   var hours = time.getHours();
   if (hours < 10) { hours = '0' + hours };
@@ -28,8 +29,8 @@ class Item extends React.Component {
     info: React.PropTypes.object.isRequired
   }
   render () {
-    // console.log(this.props.info);
-    const { title, id, timeStart } = this.props.info;
+    console.log(this.props.info);
+    const { title, id, timeStart, $t } = this.props.info;
     var time = new Date(timeStart);
     var timeFormatted = makeTime(time);
 
@@ -40,18 +41,21 @@ class Item extends React.Component {
     if (difference + 60 < 0) {
       alreadyOverFlag = true;
     } else if (difference + 60 < 150) {
-      hotFlag = true;
-      setTimeout(() => {
-        location.href = '#' + id;
-      }, 1000);
+      if (isNow === false) {
+        hotFlag = true;
+        isNow = true;
+      }
     }
     return (
-      <div id={id} key={id} className={cx({item: true, alreadyOver: alreadyOverFlag, hot: hotFlag})} ref={(r) => this.element = r}>
+      <div key={id} className={cx({item: true, alreadyOver: alreadyOverFlag, hot: hotFlag})} ref={(r) => this.element = r}>
         <div className={s.time}>{timeFormatted}</div>
         <div className={s.title}>{title}</div>
         {hotFlag && (
           <div className={s.hotMessage}>сейчас в эфире</div>
         )}
+        <div className={s.tooltip}>
+          <span className={s.tooltiptext}>{$t}</span>
+        </div>
       </div>
     )
   }

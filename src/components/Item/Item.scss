@@ -1,5 +1,9 @@
 .item {
   padding: 10px;
+
+  &:hover .tooltiptext {
+    visibility: visible;
+  }
 }
 
 .time {
@@ -33,4 +37,46 @@
   margin-top: 6px;
   color: #F9A825;
   cursor: pointer;
+}
+
+
+.tooltip {
+    position: absolute;
+    border-bottom: 1px dotted black;
+    margin-top: -30px;
+    opacity: 1 !important;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: 60px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1;
+  transition: all .2s;
+  opacity: 0;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1 !important;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }

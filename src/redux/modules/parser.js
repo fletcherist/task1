@@ -33,7 +33,7 @@ export const fetchData = (channel, date) => {
     var date = getTime();
     console.log(channel, date);
     dispatch(isFetching(true));
-    fetch(`http://localhost:1337/get/${channel}/${date}`)
+    fetch(`http://yourselfr.com:1337/get/${channel}/${date}`)
       .then((r) => r.json())
       .then((r) => {
         console.log(r);

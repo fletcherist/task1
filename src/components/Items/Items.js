@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import s from './Items.scss';
 import arrow from './Arrow.svg';
+import sad from './sad.png';
 import Loader from '../Loader';
 import Item from '../Item';
 
@@ -58,8 +59,11 @@ class StartScreen extends React.Component {
 
 const ErrorHandlingData = ({channel}) => {
   return (
-    <div>
+    <div className={s.noTV}>
       Программа передач на сегодня отсутствует
+      <div className={s.sad}>
+        <img src={sad} />
+      </div>
     </div>
   )
 }
