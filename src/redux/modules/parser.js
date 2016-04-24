@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch';
+
 const FETCH_DATA = 'FETCH_DATA';
 const IS_FETCHING = 'IS_FETCHING';
 
