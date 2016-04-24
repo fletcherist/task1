@@ -1,13 +1,26 @@
 .navBar {
   background-color: #2A2F3A;
-  height: 100%;
   width: 400px;
-  float: right;
-  top: 0px;
-  right: 0px;
+  height: 920px;
   border-left: 0px solid #4F5A65;
-  position: fixed;
   display: inline-block;
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @media screen and (max-width: 600px) {
+    position: relative;
+    display: block;
+    float: none;
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: #2A2F3A;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 
 .program {
@@ -46,4 +59,5 @@
 .description {
   color: white;
   font-weight: 300;
+  font-size: 13px;
 }

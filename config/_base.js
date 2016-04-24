@@ -21,6 +21,8 @@ const config = {
   // ----------------------------------
   server_host : 'localhost',
   server_port : process.env.PORT || 3000,
+  // server_host : 'yourselfr.com',
+  // server_port : 1337,
 
   // ----------------------------------
   // Compiler Configuration

@@ -1,18 +1,21 @@
 .item {
   padding: 10px;
+  display: flex;
 
   &:hover .tooltiptext {
-    visibility: visible;
+    // visibility: visible;
+    // opacity: 1;
   }
 }
 
 .time {
-  display: inline-block;
+  // display: f;
   padding-left: 10px;
   padding-right: 15px;
   font-size: 24px;
   font-weight: 100;
   color: #cacaca;
+  align-self: flex-end;
 }
 
 .title {
@@ -37,6 +40,7 @@
   margin-top: 6px;
   color: #F9A825;
   cursor: pointer;
+  padding: 0px 5px;
 }
 
 
@@ -45,14 +49,21 @@
     border-bottom: 1px dotted black;
     margin-top: -30px;
     opacity: 1 !important;
+    display: block;
+    left: 50%;
+    margin-left: -420px;
+    margin-top: -40px;
+
+    @media screen and (max-width: 600px) {
+      margin-left: -200px;
+    }
 }
 
 .tooltip .tooltiptext {
+  display: block;
   visibility: hidden;
   width: 220px;
-  bottom: 100%;
-  left: 50%;
-  margin-left: 60px;
+  // margin-left: 60px;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -63,11 +74,6 @@
   z-index: 1;
   transition: all .2s;
   opacity: 0;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1 !important;
 }
 
 .tooltip .tooltiptext::after {

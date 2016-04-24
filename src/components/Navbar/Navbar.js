@@ -59,7 +59,7 @@ const channels = [
   {
     title: 'РЕН-ТВ',
     picture: ren,
-    description: 'Интересное об инопланетянах и массонах',
+    description: 'Интересное об инопланетянах',
     key: 'ren-tv'
   },
   {

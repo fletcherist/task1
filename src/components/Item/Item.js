@@ -28,6 +28,9 @@ class Item extends React.Component {
   static propTypes = {
     info: React.PropTypes.object.isRequired
   }
+  componentDidMount () {
+    isNow = false;
+  }
   render () {
     console.log(this.props.info);
     const { title, id, timeStart, $t } = this.props.info;

@@ -1,12 +1,24 @@
 .container {
   background-color: #fff;
   width: 100%;
-  margin: 20px auto;
+  max-width: 550px;
+  // margin: 20px auto;
   min-height: 750px;
-  padding: 20px;
+  padding: 20px 0px;
   border-radius: 4px;
-  max-width: 800px;
+  // max-width: 500px;
   margin: 0px auto;
+  display: inline-block;
+  margin-left: 10px;
+
+  @media screen and (max-width: 600px) {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    min-height: 350px;
+    max-width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
 
 .startScreen {
@@ -15,6 +27,9 @@
   font-size: 22px;
   font-weight: 300;
   padding: 200px 30px 30px 30px;
+  @media screen and (max-width: 600px) {
+    padding-top: 100px;
+  }
 
   .startScreenTitle {
     padding-bottom: 40px;
@@ -25,6 +40,9 @@
   color: #ABABAB;
   text-align: center;
   padding-top: 300px;
+  @media screen and (max-width: 600px) {
+    padding-top: 100px;
+  }
 }
 
 .sad {
